@@ -7,8 +7,7 @@
 
     export const writeCode = (codeToType) => {
         if(_playing) return;
-        console.log("code: " , codeToType)
-        codeToType.replace('\n', '');
+        codeToType = codeToType.replaceAll('\r\n', '\n');
         _playing = true;
         let index = 0;
         _typingIntervalId = setInterval(() => {

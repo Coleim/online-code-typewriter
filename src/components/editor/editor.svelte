@@ -8,7 +8,7 @@
     // export let theme: string = 'vs-dark';
     // export let theme: string = 'vs';
     export let theme: string = 'godot-theme';
-    export let automaticLayout: boolean = true;
+    export let automaticLayout: boolean = false;
     export let autoClosingBrackets: monaco.editor.EditorAutoClosingStrategy = "languageDefined";
     export let autoIndent: 'none' | 'keep' | 'brackets' | 'advanced' | 'full' = "none";
     export let autoSurround: monaco.editor.EditorAutoSurroundStrategy= "never";
@@ -54,6 +54,10 @@
             codeContent = _codeEditor.getValue();
         });
         _monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+            noSemanticValidation: true,
+            noSyntaxValidation: true,
+        });
+        _monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
             noSemanticValidation: true,
             noSyntaxValidation: true,
         });

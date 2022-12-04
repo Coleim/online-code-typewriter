@@ -12,7 +12,6 @@
     _player.writeCode(origineCodeContent);
   };
   const stop = () => {
-    console.log("stop");
     _player.clearCode();
   };
 </script>
