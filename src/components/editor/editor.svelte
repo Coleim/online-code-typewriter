@@ -7,8 +7,8 @@
     export let codeContent: string = '';
     // export let theme: string = 'vs-dark';
     // export let theme: string = 'vs';
-    export let theme: string = 'godot-theme';
-    export let automaticLayout: boolean = false;
+    export let theme: string = 'vs-dark';
+    export let automaticLayout: boolean = true;
     export let autoClosingBrackets: monaco.editor.EditorAutoClosingStrategy = "languageDefined";
     export let autoIndent: 'none' | 'keep' | 'brackets' | 'advanced' | 'full' = "none";
     export let autoSurround: monaco.editor.EditorAutoSurroundStrategy= "never";

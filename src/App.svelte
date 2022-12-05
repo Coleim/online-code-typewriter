@@ -31,8 +31,12 @@
   </div>
 </div>
 
-<style>
+<style global>
   .editors {
     display: flex;
+  }
+
+  .mdc-top-app-bar__row {
+    border-left: 1px solid #e65600 !important;
   }
 </style>

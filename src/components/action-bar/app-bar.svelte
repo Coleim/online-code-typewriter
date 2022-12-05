@@ -1,5 +1,4 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
     import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
     import Select, { Option } from "@smui/select";
     import IconButton from "@smui/icon-button";
@@ -7,12 +6,11 @@
 
     let availableLanguages = monaco.languages.getLanguages();
     export let selectedLang = 'typescript'; // availableLanguages.at(0).id;
-
 </script>
 
-<TopAppBar variant="static" color="primary" dense>
+<TopAppBar variant="static" color="primary" dense >
     <Row>
-        <Section toolbar align="start">
+        <Section toolbar align="start" >
             <Select bind:value={selectedLang} label="Selected Language">
                 {#each availableLanguages as lang}
                     <Option value={lang.id}>
@@ -35,3 +33,16 @@
         </Section>
     </Row>
 </TopAppBar>
+
+
+<style global>
+    
+    .mdc-select__selected-text,
+    .mdc-floating-label--float-above,
+    .mdc-select__dropdown-icon,
+    .mdc-select__dropdown-icon-graphic,
+    .mdc-select__dropdown-icon-active,
+    .mdc-select__dropdown-icon-inactive {
+      color: #fff !important;
+    }
+  </style>

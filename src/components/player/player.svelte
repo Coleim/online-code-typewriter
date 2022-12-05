@@ -34,7 +34,8 @@
 </script>
 
 <Editor bind:this={_editor} language={language}
-    autoIndent={'none'} 
+    autoIndent={'none'}
+    minimap={false}
     autoClosingBrackets={'never'} />
 
 
