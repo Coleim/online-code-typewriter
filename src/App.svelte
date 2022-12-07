@@ -5,6 +5,7 @@
   import Player from "./components/player/player.svelte";
 
   let lang = "javascript";
+  let typingSpeed = 10;
   let origineCodeContent = `let x = 5; let y = 6; let z = x + y;`;
   let _player;
 
@@ -25,18 +26,14 @@
   </div>
   
   <div style="width: 60vw">
-    <ActionBar on:play={play} on:stop={stop}/>
+    <ActionBar on:play={play} on:stop={stop} bind:typingSpeed={typingSpeed}/>
     <!-- <ResizeVerticalBar /> -->
-    <Player language={lang} bind:this={_player} />
+    <Player language={lang} bind:this={_player} bind:typingSpeed={typingSpeed}/>
   </div>
 </div>
 
 <style global>
   .editors {
     display: flex;
-  }
-
-  .mdc-top-app-bar__row {
-    border-left: 1px solid #e65600 !important;
   }
 </style>

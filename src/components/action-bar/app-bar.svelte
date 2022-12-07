@@ -30,6 +30,7 @@
 
         <Section align="end">
             <IconButton class="material-icons">settings</IconButton>
+            <IconButton class="material-icons">help</IconButton>
         </Section>
     </Row>
 </TopAppBar>

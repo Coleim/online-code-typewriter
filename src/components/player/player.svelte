@@ -1,6 +1,7 @@
 <script lang="ts">
     import Editor from "../editor/editor.svelte";
     export let language;
+    export let typingSpeed;
     let _editor;
     let _typingIntervalId;
     let _playing = false;
@@ -18,7 +19,7 @@
                 stop();
                 _playing = false;
             }
-        }, 40);
+        }, 100-typingSpeed);
     }
 
     export const clearCode = () => {
