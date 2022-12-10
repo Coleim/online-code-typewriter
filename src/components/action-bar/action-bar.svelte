@@ -3,29 +3,42 @@
     import TopAppBar, { Row, Section } from "@smui/top-app-bar";
     import IconButton from "@smui/icon-button";
     import Slider from '@smui/slider';
-    import FormField from '@smui/form-field';
 
-    export let typingSpeed = 10;
+    export let typingSpeed;
+ 
+    export let isPlaying;
 
 	const dispatch = createEventDispatcher();
     const play = () => {
 		dispatch('play');
+        isPlaying = true;
+	}
+    const pause = () => {
+		dispatch('pause');
+        isPlaying = false;
 	}
     const stop = () => {
 		dispatch('stop');
+        isPlaying = false;
 	}
-
-
+    const clear = () => {
+		dispatch('clear');
+        isPlaying = false;
+	}
 
 </script>
 
 <TopAppBar variant="static" color="secondary" dense>
     <Row>
         <Section toolbar align="start">
-            <!-- <IconButton class="material-icons">file_open</IconButton> -->
-            <IconButton class="material-icons" on:click={play}>play_arrow</IconButton>
-            <!-- <IconButton class="material-icons">pause</IconButton> -->
-            <IconButton class="material-icons" on:click={stop}>stop</IconButton>         
+            {#if isPlaying}
+                <IconButton class="material-icons" on:click={pause}>pause</IconButton>
+            {:else}
+                <IconButton class="material-icons" on:click={play}>play_arrow</IconButton>
+            {/if}
+            <IconButton class="material-icons" on:click={stop}>stop</IconButton>
+            <!-- <IconButton class="material-icons" on:click={clear}>playlist_remove</IconButton>     -->
+            <IconButton class="material-icons" on:click={clear}>delete_sweep</IconButton>
         </Section>
 
         <Section toolbar>
@@ -39,9 +52,9 @@
                     input$aria-label="Typing speed"
                 />
                 { typingSpeed }
-            </div>            
+            </div>
         </Section>
 
-        
+
     </Row>
 </TopAppBar>
