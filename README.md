@@ -4,7 +4,7 @@ This application allow you to mimic the typing of code.
 
 Available online : https://online-code-typewriter.onrender.com/
 
-![image](https://user-images.githubusercontent.com/430679/205654162-422d22e7-2a9f-4d5b-85a9-f224daf44d7a.png)
+![image](https://user-images.githubusercontent.com/430679/206875686-5caeb30e-89e5-4462-aede-a85706d399cf.png)
 
 ## Recommended IDE Setup
 
