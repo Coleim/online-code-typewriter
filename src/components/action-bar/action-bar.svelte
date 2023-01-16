@@ -5,25 +5,26 @@
     import Slider from '@smui/slider';
 
     export let typingSpeed;
- 
     export let isPlaying;
+ 
+    let isPaused = true;
 
 	const dispatch = createEventDispatcher();
     const play = () => {
 		dispatch('play');
-        isPlaying = true;
+        isPaused = false;
 	}
     const pause = () => {
 		dispatch('pause');
-        isPlaying = false;
+        isPaused = true;
 	}
     const stop = () => {
 		dispatch('stop');
-        isPlaying = false;
+        isPaused = false;
 	}
     const clear = () => {
 		dispatch('clear');
-        isPlaying = false;
+        isPaused = false;
 	}
 
 </script>
@@ -31,10 +32,10 @@
 <TopAppBar variant="static" color="secondary" dense>
     <Row>
         <Section toolbar align="start">
-            {#if isPlaying}
-                <IconButton class="material-icons" on:click={pause}>pause</IconButton>
-            {:else}
+            {#if !isPlaying || isPaused}
                 <IconButton class="material-icons" on:click={play}>play_arrow</IconButton>
+            {:else}
+                <IconButton class="material-icons" on:click={pause}>pause</IconButton>
             {/if}
             <IconButton class="material-icons" on:click={stop}>stop</IconButton>
             <!-- <IconButton class="material-icons" on:click={clear}>playlist_remove</IconButton>     -->

@@ -26,7 +26,6 @@
 
 <AppBar bind:selectedLang={lang} />
 
-
 <div class="editors">
   <div style="width: 40vw; min-width: 270px;">
     <Editor language={lang} bind:codeContent={origineCodeContent} />
@@ -34,8 +33,6 @@
   
   <div style="width: 60vw; min-width: 520px;">
     <ActionBar on:play={play} on:stop={stop} on:pause={pause} on:clear={clearCode} bind:typingSpeed={typingSpeed} bind:isPlaying={playing} />
-   
-    <!-- <ResizeVerticalBar /> -->
     <Player language={lang} bind:this={_player} bind:typingSpeed={typingSpeed} bind:playing={playing}/>
   </div>
 </div>
